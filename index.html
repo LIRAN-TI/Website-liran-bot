@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="style.css">
+
+<html>
+<head>
+  <body class="black-bg">
+    <div id="liranbot-container">
+      <div id="liranbot-header">
+        <h1>liranbot</h1>
+      </div>
+      <div id="liranbot-messages">
+      </div>
+      <form id="liranbot-form">
+        <input type="text" id="liranbot-input" placeholder="Enter your message...">
+        <button type="submit">Send</button>
+      </form>
+      <label class="switch" style="position:absolute; top:20px; right:20px;">
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+    </div>
+  </body>
+  
+  <div class="social-media-icons">
+    <a href="https://github.com/LIRAN-TI" target="_blank"><img src="githublogo.png" alt="github"></a>
+  </div>
+  
+  
+<script>
+  const liranbotContainer = document.getElementById("liranbot-container");
+  const liranbotMessages = document.getElementById("liranbot-messages");
+  const liranbotForm = document.getElementById("liranbot-form");
+  const liranbotInput = document.getElementById("liranbot-input");
+  const chatContainer = document.getElementById("chat-container");
+  const chatMessages = document.getElementById("chat-messages");
+  const chatForm = document.getElementById("chat-form");
+  const chatInput = document.getElementById("chat-input");
+
+  liranbotForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const message = liranbotInput.value;
+
+    if (message.trim() === "") {
+      return;
+    }
+
+    liranbotInput.value = "";
+
+
+  liranbotMessages.innerHTML += `<div class="liranbot-message user-message">${message}</div>`;
+
+  switch (message) {
+    case "hello":
+    liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">Hello!</div>`;
+    break;
+  case "goodbye":
+    liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">Goodbye! Have a great day!</div>`;
+    break;
+  case "what is your name":
+    liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">My name is Liranbot.</div>`;
+    break;
+  case "what do you like to do":
+    liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">I like to help people and answer questions.</div>`;
+    break;
+  case "what is your favorite color":
+    liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">My favorite color is blue.</div>`;
+    break;
+  case "what is your favorite food":
+    liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">My favorite food is pizza.</div>`;
+    break;
+  case "what is your favorite animal":
+    liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">My favorite animal is a dolphin.</div>`;
+    break;
+  case "what is your favorite hobby":
+    liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">My favorite hobby is reading.</div>`;
+    break;
+  case "what is your favorite place to visit":
+    liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">My favorite place to visit is the beach.</div>`;
+    break;
+  case "what is your favorite movie":
+    liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">My favorite movie is The Shawshank Redemption.</div>`;
+    break;
+  case "what is your favorite book":
+    liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">My favorite book is To Kill a Mockingbird.</div>`;
+    break;
+    case "what is your favorite song":
+    liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">My favorite song is "Bohemian Rhapsody" by Queen.</div>`;
+      break;
+    default:
+      liranbotMessages.innerHTML += `<div class="liranbot-message liranbot-message">I can't answer anything about this question, please ask another one</div>`;
+  }
+});
+
+const checkbox = document.querySelector("input[type='checkbox']");
+const body = document.querySelector("body");
+
+checkbox.addEventListener("change", function() {
+    if(checkbox.checked) {
+        body.classList.remove("white-bg");
+        body.classList.add("black-bg");
+    } else {
+        body.classList.add("white-bg");
+        body.classList.remove("black-bg");
+    }
+});
+
+
+</script>
+
+<script>
+
+  liranbotForm.querySelector("button[type=submit]").disabled = true;
+
+  liranbotInput.addEventListener("input", () => {
+    liranbotForm.querySelector("button[type=submit]").disabled = liranbotInput.value.length < 4;
+  });
+
+  liranbotForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const message = liranbotInput.value;
+
+    if (message.length < 4) {
+      setTimeout(() => {
+        liranbotMessages.innerHTML = "";
+      }, 15000);
+      return;
+    }
+
+    liranbotInput.value = "";
+
+    liranbotMessages.innerHTML += `<div class="liranbot-message user-message">${message}</div>`;
+  });
+</script>
+
+
+
+
+
+
+

@@ -1,0 +1,173 @@
+#liranbot-container {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+body {
+  background-color: white;
+  transition: background-color 0.5s ease;
+}
+
+.black-bg {
+  background-color: #212121;
+  transition: background-color 0.5s ease;
+}
+
+.switch {
+  --secondary-container: #3a4b39;
+  --primary: #84da89;
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.7em;
+  height: 1.8em;
+ }
+ 
+ .switch input {
+  display: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+ }
+ 
+ .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #313033;
+  transition: .2s;
+  border-radius: 30px;
+ }
+ 
+ .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.2em;
+  bottom: 0.2em;
+  background-color: #aeaaae;
+  transition: .4s;
+ }
+ 
+ input:checked + .slider::before {
+  background-color: var(--primary);
+ }
+ 
+ input:checked + .slider {
+  background-color: var(--secondary-container);
+ }
+ 
+ input:focus + .slider {
+  box-shadow: 0 0 1px var(--secondary-container);
+ }
+ 
+ input:checked + .slider:before {
+  transform: translateX(1.9em);
+ }
+
+
+#liranbot-header {
+  background-color: #0084ff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+#liranbot-messages {
+  padding: 20px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.liranbot-message {
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#liranbot-form {
+  display: flex;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+}
+
+#liranbot-input {
+  flex-grow: 1;
+  margin-right: 10px;
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #0084ff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.liranbot-message {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.liranbot-message-welcome {
+  background-color: #e6e6e6;
+}
+
+.user-message {
+  background-color: #0084ff;
+  color: white;
+  text-align: right;
+}
+
+
+
+.social-media-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-media-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: #3F51B5;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-media-icons a:hover {
+  transform: scale(1.2);
+  background-color: #303F9F;
+}
+
+.social-media-icons img {
+  width: 30px;
+}
